@@ -38,7 +38,7 @@ body.insertAdjacentHTML('afterbegin', getGalleryMarkup(images));
  */
 
 /* Вариант 2. */
-const ulRef = document.createElement ('ul');
+/* const ulRef = document.createElement ('ul');
 ulRef.setAttribute('id', 'gallery');
 ulRef.classList.add('container');
 
@@ -58,4 +58,28 @@ listItem3.classList.add('imageSizes');
 const picturesSet = [listItem1, listItem2, listItem3];
 
 ulRef.append(...picturesSet);
-console.log(ulRef);
+console.log(ulRef); */
+
+/* Вариант 3.
+ */
+/* const madeGallery = document.querySelector('#gallery');
+madeGallery.classList.add('container');
+
+images.forEach(element => {
+  console.log(element)
+const list = document.createElement('li');
+const imageRef = document.createElement('img');
+imageRef.setAttribute('src', '_______');
+imageRef.setAttribute('alt', '_______');
+imageRef.insertAdjacentHTML('afterbegin', element)
+madeGallery.append(list);
+list.append(imageRef);
+}); */
+
+/* Вариант 4. */
+const madeGallery = document.querySelector('#gallery');
+madeGallery.classList.add('container');
+
+madeGallery.insertAdjacentHTML('afterbegin', images.map(({url, alt}) => 
+`<li><img width="500" src='${url}' alt='${alt}'></li>`).join(''));
+madeGallery.classList.add('container');
