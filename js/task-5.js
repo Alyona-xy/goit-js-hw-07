@@ -1,15 +1,13 @@
-const inputForm = {
-    inputText: document.querySelector('input#name-input');
-    shownText: document.querySelector('span#name-output');
-};
+const inputText = document.querySelector('input#name-input');
+const displayText = document.querySelector('span#name-output');
 
 const shownText = function () {
     if (inputText.value === '') {
-        inputForm.shownText.textContent = 'незнакомец'
-    };
+        displayText.textContent = 'незнакомец'
+    }
     else {
-        inputForm.shownText.textContent = inputForm.inputText.value;
+        displayText.textContent = inputText.value;
     }
 };
 
-inputForm.inputText.addEventListener('input', () => shownText());
+inputText.addEventListener('input', () => shownText());

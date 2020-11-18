@@ -1,23 +1,21 @@
-const allButtons = {
-    buttonIncrement: document.querySelector('button[data-action="increment"]');
-    buttonDecrement: document.querySelector('button[data-action="decrement"]');
-    counterValue: document.querySelector('#value');
-    currentValue: 0;
-};
+const buttonIncrement = document.querySelector('button[data-action="increment"]');
+const buttonDecrement = document.querySelector('button[data-action="decrement"]');
+const counterValue = document.querySelector('#value')
+const currentValue = 0;
 
 const increment = function () {
-    allButtons.currentValue += 1;
+    currentValue += 1;
     getValue();
-}:
+};
 
 const decrement = function () {
-    allButtons.currentValue -= 1;
+    currentValue -= 1;
     getValue ();
 };
 
 const getValue = function () {
-    allButtons.counterValue.textContent = allButtons.currentValue;
+    counterValue.textContent = currentValue;
 };
 
-allButtons.buttonIncrement.addEventListener('click', () => increment());
-allButtons.buttonDecrement.addEventListener('click', () => decrement());
+buttonIncrement.addEventListener('click', () => increment());
+buttonDecrement.addEventListener('click', () => decrement());
