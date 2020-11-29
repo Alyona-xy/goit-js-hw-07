@@ -7,7 +7,24 @@ const ingredients = [
     'Приправы',
   ];
 
-const ulRef = document.createElement ('ul');
+
+  
+let ingredientsList = ingredients.map((value) =>
+  {
+    let item = document.createElement('li');
+    item.textContent = value;
+    return item;
+  });
+
+const getFullList = function (nodeList) {
+  return nodeList.map(element => element.outerHTML).join('');
+}    
+document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getFullList(ingredientsList));
+
+
+
+
+/* const ulRef = document.createElement ('ul');
 ulRef.setAttribute('id', 'ingredients');
 
 const li1 = document.createElement('li');
@@ -26,7 +43,7 @@ const li5 = document.createElement('li');
 li5.textContent = 'Зелень';
 
 const li6 = document.createElement('li');
-li6.textContent = 'Приправы';
+li6.textContent = 'Приправы'; */
 
 /*   ingredients.textContent = "Ингридиенты";
   for (const ingredient of ingredients) {
@@ -42,10 +59,10 @@ ingredient.textContent = `${ingredients.value}`; */
   ingredient.forEach(ingredient => 
     console.log(ingredient.textContent)); */
 
-const list = [li1, li2, li3, li4, li5, li6];
+/* const list = [li1, li2, li3, li4, li5, li6];
 
 ulRef.append(...list);
-console.log(ulRef);
+console.log(ulRef); */
 
 
     
